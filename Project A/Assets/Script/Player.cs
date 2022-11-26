@@ -13,19 +13,24 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
 
     public TextMeshProUGUI organicCountText;
-    public int organicCount = 0;
+    public int organicCount;
     public GameObject organicPrefab;
 
     public TextMeshProUGUI plasticCountText;
-    public int plasticCount = 0;
+    public int plasticCount;
     public GameObject plasticPrefab;
 
-
+    public GameObject gameWonCanvas;
     TrashType trashHolding = TrashType.None;
     // Start is called before the first frame update
     void Start()
     {
         collected = new List<GameObject>();
+        organicCount = 3;
+        plasticCount = 3;
+        organicCountText.text = organicCount.ToString() + " x";
+        plasticCountText.text = plasticCount.ToString() + " x";
+
     }
 
     // Update is called once per frame
@@ -33,7 +38,16 @@ public class Player : MonoBehaviour
     {
         Move();
         CollectedRender();
-
+        CheckWin();
+    }
+    void CheckWin()
+    {
+        if (organicCount == 0 && plasticCount == 0)
+        {
+            //win
+            gameWonCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
     public void Move()
     {
@@ -49,15 +63,15 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<OrganicTrash>())
         {
-            organicCount++;
-            organicCountText.text = organicCount.ToString() + " x";
+            //organicCount--;
+            //organicCountText.text = organicCount.ToString() + " x";
             //collision.gameObject.SetActive(false);
             collected.Add(collision.gameObject);
         }
         if (collision.gameObject.GetComponent<PlasticTrash>())
         {
-            plasticCount++;
-            plasticCountText.text = plasticCount.ToString() + " x";
+            //plasticCount--;
+            //plasticCountText.text = plasticCount.ToString() + " x";
             //collision.gameObject.SetActive(false);
             collected.Add(collision.gameObject);
         }
