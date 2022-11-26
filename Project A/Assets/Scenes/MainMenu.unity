@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1149,47 +1150,71 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1841348763
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1841348765}
-  - component: {fileID: 1841348764}
-  m_Layer: 0
-  m_Name: Main Menu Controler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1841348764
+--- !u!114 &1841348764 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 350833434582853537, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+  m_PrefabInstance: {fileID: 350833433152644925}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841348763}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b41d05b71c4a5048ac5fc82cbbe2b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1841348765
-Transform:
+--- !u!1001 &350833433152644925
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841348763}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18532619, y: -0.7798366, z: 0.0631407}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.18532619
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.7798366
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0631407
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853536, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350833434582853542, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
+      propertyPath: m_Name
+      value: Main Menu Controler
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5b8a2fc3069bab449373189ec8861fa, type: 3}
