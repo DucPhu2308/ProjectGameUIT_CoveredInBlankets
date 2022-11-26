@@ -85,26 +85,56 @@ public class Player : MonoBehaviour
                 collected[0].transform.position = new Vector2(transform.position.x, transform.position.y + 2);
             else
                 collected[i].transform.position = new Vector2(transform.position.x, transform.position.y + trashOffset * (i+1));
-
         }
+    }
+
+    protected void remove(PlasticBin bin)
+    {
+        int _flashticCount = 0;
+        for (int i = 0; i < collected.Count; i++)
+        {
+            if (collected[i].GetComponent<PlasticTrash>())
+            {
+                _flashticCount++;
+                Destroy(collected[i].gameObject);
+                collected.RemoveAt(i);
+                i--;
+            }
+        }
+        plasticCount-= _flashticCount;
+        plasticCountText.text = plasticCount.ToString() + " x";
+
+    }
+    protected void remove(OrganicBin bin)
+    {
+        int _flashticCount = 0;
+        for (int i = 0; i < collected.Count; i++)
+        {
+            if (collected[i].GetComponent<OrganicTrash>())
+            {
+                _flashticCount++;
+                Destroy(collected[i].gameObject);
+                collected.RemoveAt(i);
+                i--;
+            }
+        }
+        organicCount -= _flashticCount;
+        organicCountText.text = organicCount.ToString() + " x";
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collected.Count > 0)
         {
-            while (collision.gameObject.GetComponent<OrganicBin>() && collected[0].GetComponent<OrganicTrash>())
+            var orgBin = collision.gameObject.GetComponent<OrganicBin>();
+            if (orgBin)
             {
-                organicCount--;
-                organicCountText.text = organicCount.ToString() + " x";
-                Destroy(collected[0].gameObject);
-                collected.RemoveAt(0);
+                remove(orgBin);
             }
-            while (collision.gameObject.GetComponent<PlasticBin>() && collected[0].GetComponent<PlasticTrash>())
+            var flsBin = collision.gameObject.GetComponent<PlasticBin>();
+            if (flsBin)
             {
-                plasticCount--;
-                plasticCountText.text = plasticCount.ToString() + " x";
-                Destroy(collected[0].gameObject);
-                collected.RemoveAt(0);
+                remove(flsBin);
             }
         }
     }
